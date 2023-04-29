@@ -23,7 +23,7 @@ For both challenges, during the development phase, the team should train and eva
 
 # Conclusion
 
-In summary, this project has provided the team with a valuable experience in learning from limited data. In Challenge 1, the team was able to perform well with the top submission on CodaLab, and implemented two models which achieved similar performance. However, there is still room for further improvement, such as making the SVM classifier in the third approach fully differentiable as in \cite{tang13_dl_svm}. 
+In summary, this project has provided the team with a valuable experience in learning from limited data. In Challenge 1, the team was able to perform well with the top submission on CodaLab, and implemented two models which achieved similar performance. However, there is still room for further improvement, such as making the SVM classifier in the third approach fully differentiable. 
 
 The results of Challenge 1 also demonstrated that learning with limited data without pre-training, as in this context, resulted in performance below 50\% test accuracy. This highlights the importance of transfer learning approaches, except when the new data has vastly different characteristics compared to the source domain, where the challenge 1's context is unavoidable. 
 
