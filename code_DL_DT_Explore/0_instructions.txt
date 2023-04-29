@@ -1,0 +1,8 @@
+COMP 691 project - submisison code
+Team: DL_DT_Explore
+
+All code files are ran separately.
+  1) Others/baseline_resnet9.py 			   Code sumitted in CodaLab competetion for challenge 1
+  2) Testbed_challenge1_ResNet9_gridsearch_FINAL	   Final code for challenge 1 using ResNet9 CNN
+  3) Testbest_challenge1_TripletLoss_SVM_FINAL.ipynb	   Final code for challenge 1 using Triplet Loss + SVM
+  4) Others/Testbest_challenge1_ResNet9_RandomSearch.ipynb Sample code for random search auto resuming mechanism
