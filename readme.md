@@ -27,9 +27,9 @@ For both challenges, during the development phase, the team should train and eva
 
 # Conclusion
 
-In summary, this project has provided the team with a valuable experience in learning from limited data. In Challenge 1, the team was able to perform well with the top submission on CodaLab, and implemented two models which achieved similar performance. However, there is still room for further improvement, such as making the SVM classifier in the third approach fully differentiable as in \cite{tang13_dl_svm}. 
+In summary, this project has provided the team with a valuable experience in learning from limited data. In Challenge 1, the team was able to perform well with the top submission on CodaLab, and implemented two models which achieved similar performance. However, there is still room for further improvement, such as making the SVM classifier in the third approach fully differentiable. 
 
-The results of Challenge 1 also demonstrated that learning with limited data without pre-training, as in this context, resulted in performance below 50\% test accuracy. This highlights the importance of transfer learning approaches, except when the new data has vastly different characteristics compared to the source domain, where the challenge 1's context is unavoidable. 
+The results of Challenge 1 also demonstrated that learning with limited data without pre-training, as in this context, resulted in performance below 50\% test accuracy (over 10 classes). This highlights the importance of transfer learning approaches, except when the new data has vastly different characteristics compared to the source domain, where the challenge 1's context is unavoidable. 
 
 In Challenge 2, the objective was to show how deep models such as VGG16, ResNet, and EfficientNetB0 could be used on very small datasets without overfitting and with great performance. All models were pre-trained on ImageNet. The experiments showed that most of the models performed well, particularly when data augmentation, dropout, and fine-tuning were applied.
 
