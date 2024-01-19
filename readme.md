@@ -16,6 +16,10 @@ In the final evaluation, the model will be run on 5 random instances of this pro
 
 The challenge is similar to challenge 1 but with the ability to use external data or models not trained on CIFAR-10 from the PyTorch model repository or to train your own model on external data (you may not train a model on CIFAR-10 dataset or any derivative using these images). Teams may consider various forms of fine-tuning, meta-learning, semi-supervised learning with an external dataset, and other related ideas.
 
+| ![Samples of CIFAR10 images](/github_images/CIFAR10_examples.png) | 
+|:--:| 
+| *Samples of CIFAR10 images* |
+
 ### Evaluation
 
 For both challenges, during the development phase, the team should train and evaluate on the train set. The final result of training and testing on CIFAR-10 Test set need to be reported with the average and standard deviation. This should be done on a minimum of 3 splits. Each split should use 100 training samples and a separate 2000 samples for testing, as done in the test bed when sampling from the CIFAR-10 Train set.
