@@ -10,20 +10,96 @@ The challenge is to perform few-sample learning on the CIFAR-10 dataset. The dat
 
 ### Evaluation
 
-In the final evaluation, the model will be run on 5 random instances of this problem. The evaluation will occur both on the CIFAR-10 test set and other data which will not be revealed at the moment. There is also a CodaLab competition in this challenge 1 and the CodaLab environment only supports CPU, not GPU. The time constraint for challenge 1 is 2 hour model running time in GPU.
+In the final evaluation, the model will be run on 5 random instances of this problem. The evaluation will occur both on the CIFAR-10 test set and other data which will not be revealed at the moment. There is also a CodaLab competition in this challenge 1 and the CodaLab environment only supports CPU, not GPU. The time constraint for challenge 1 is 2 hours model running time in CPU.
 
 ## Challenge 2
 
 The challenge is similar to challenge 1 but with the ability to use external data or models not trained on CIFAR-10 from the PyTorch model repository or to train your own model on external data (you may not train a model on CIFAR-10 dataset or any derivative using these images). Teams may consider various forms of fine-tuning, meta-learning, semi-supervised learning with an external dataset, and other related ideas.
 
-| ![Samples of CIFAR10 images](github_images\CIFAR10_samples.png) | 
-|:--:| 
-| *Samples of CIFAR10 images* |
-
 ### Evaluation
 
 For both challenges, during the development phase, the team should train and evaluate on the train set. The final result of training and testing on CIFAR-10 Test set need to be reported with the average and standard deviation. This should be done on a minimum of 3 splits. Each split should use 100 training samples and a separate 2000 samples for testing, as done in the test bed when sampling from the CIFAR-10 Train set.
 
+| ![Samples of CIFAR10 images](./github_images/CIFAR10_samples.png) | 
+|:--:| 
+| *Samples of CIFAR10 images* |
+
+# Files / Documents
+
+* Read our full report [here](COMP691_DL_DT_Explore_Report_FINAL_rev1.pdf)
+* View the Latex source to build report [here](./COMP691-%20DL_DT_Explore_Report/)
+* View project codes [here](./code_DL_DT_Explore/) 
+
+# Brief method and result summaries
+
+## Challenge 1 - Learning with limited sample size and no pre-training
+
+
+
+### Common techniques
+    
+We applied the following techniques for this challenge:
+
+* Base model: ResNet9
+* Data augmentation
+* Adam optimizer with weights decays and Gradient Clipping
+* Cosine loss function
+* Learning rate scheduler
+* Combination of grid search and random search
+
+We use Google Colab to explore the most optimized parameters from grid search and random search, then submit the final version into Codalab for the competition
+
+### Two different approaches
+
+1) The first approach using tradditional CNN model (ResNet9 with a final linear layer for classification)
+2) Tradditional linear models: k-NN (k Nearest Neighbors) and SVM (Support Vector Machine)
+3) Hybrid method: Deep metric learning using the same base model (ResNet9) but leveraged the Triplet loss function combined with a linear classifier (k-NN or SVM)
+
+### Challenge 1 results
+
+1) **First approach - CNN model (RestNet9)**
+
+With randrom search, the final test performance is more optimized and achieved higher consistency in accuracy between runs compared to the parameters obtained from grid search only.
+
+| ![Grid vs random search](./github_images/REPORT_resnet9_Best_result_grid_vs_random_search.png) | 
+|:--:| 
+| *Difference in model test performance (first approach with CNN model) between parameter search with Grid search only (top) vs random search (bottom)* |
+
+| ![Random search](./github_images/APPENDIX_performance_summary_sample.png) | 
+|:--:| 
+| *Parameter optimization through Random search progress summaries. The scenario (parameter setting with lowest variation and good enough average accuracy will be selected.)* |
+
+| ![Codalab result](./github_images/APPENDIX_CodaLab_dashboard.png) | 
+|:--:| 
+| *Codalab competition final result - Our team won the first place with 38.42% overall test accuracy* |
+
+2) **Third apprach - triplet loss (hard negative mining) with final linear classifier**
+
+The triplet loss function helps pushing the images of different classes far from each other in embedded (latent) space, thus increase the chance for the linear classifier to classify them.
+
+| ![Triplet loss](./github_images/REPORT_challenge1_triplet_distances.png) | 
+|:--:| 
+| *Effect of deep metric learning through the triplet loss function on the input images, pre-training (left) and post training (right), visualized by PCA (top) and T-SNE (bottom) transformations* |
+
+As there is not enough time for fine-tuning the model with this approach, the final evaluation performance of this approach is not as good as the first approach, but it's worth the try and shows promising result if being fine-tuned properly.
+
+| ![Triplet loss - SVM performance](./github_images/APENDIX_Triplet_SVM_result.png) | 
+|:--:| 
+| *Triplet loss test performance* |
+
+3) **Final challenge 1 summary table**
+
+![Challenge 1 table](./github_images/challenege1_table.png)
+
+## Challenge 2 - Learning with limited sample size leveraging transfer learning
+
+Only going with pure CNN model approaches and data augmentation, we selected pre-trained models (trained with ImageNet dataset), then unfreeze the final layers and do further training with 10k samples of the CINIC-10 dataset plus 100 samples of the CIFAR-10 dataset.
+
+|![Challenge 2 EfficientNet](./github_images/EfficientNet-B0_performance.png)|
+|:--:| 
+| *Best model's performance in challenge 2* |
+
+![Challenge 2 table](./github_images/challenege2_table.png)
 
 # Conclusion
 
