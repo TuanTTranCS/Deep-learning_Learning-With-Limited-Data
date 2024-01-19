@@ -16,7 +16,7 @@ In the final evaluation, the model will be run on 5 random instances of this pro
 
 The challenge is similar to challenge 1 but with the ability to use external data or models not trained on CIFAR-10 from the PyTorch model repository or to train your own model on external data (you may not train a model on CIFAR-10 dataset or any derivative using these images). Teams may consider various forms of fine-tuning, meta-learning, semi-supervised learning with an external dataset, and other related ideas.
 
-| ![Samples of CIFAR10 images](/github_images/CIFAR10_examples.png) | 
+| ![Samples of CIFAR10 images](github_images\CIFAR10_samples.png) | 
 |:--:| 
 | *Samples of CIFAR10 images* |
 
