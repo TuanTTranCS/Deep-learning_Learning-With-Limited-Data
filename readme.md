@@ -83,7 +83,7 @@ The triplet loss function helps pushing the images of different classes far from
 
 As there is not enough time for fine-tuning the model with this approach, the final evaluation performance of this approach is not as good as the first approach, but it's worth the try and shows promising result if being fine-tuned properly.
 
-| ![Triplet loss - SVM performance](./github_images/APENDIX_Triplet_SVM_result.png) | 
+| ![Triplet loss - SVM performance](./github_images/APENDIX_Triplet_SVM_result.jpg) | 
 |:--:| 
 | *Triplet loss test performance* |
 
